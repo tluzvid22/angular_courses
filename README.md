@@ -1,27 +1,47 @@
-# AngularCrashCourse
+## **Notas del curso de Angular 17:**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+- Para generar un proyecto:
 
-## Development server
+```jsx
+ng new project-name
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Para crear un servicio
 
-## Code scaffolding
+```jsx
+ng generate service services/service
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Para crear un componente
 
-## Build
+```jsx
+ng generate component home
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Para ejecutar server:
 
-## Running unit tests
+```jsx
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Para el manejo de rutas:
+    - Desde el archivo **app.routes.ts,** siguiendo la estructura:
+    
+    ```jsx
+    import { Routes } from '@angular/router';
+    import { HomeComponent } from './home/home.component';
+    
+    export const routes: Routes = [
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+    ];
+    
+    ```
+    
+- **TypeScript**: Interfaces
+    
+    Una interfaz es una estructura que define la forma de un objeto, especificando los tipos de sus propiedades y métodos, pero sin proporcionar una implementación concreta. Las interfaces son una forma poderosa de establecer contratos en tu código, lo que ayuda a garantizar que los objetos cumplan con **ciertos requisitos predefinidos**.
+    
+    **Ejemplo:**
