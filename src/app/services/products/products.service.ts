@@ -31,6 +31,6 @@ export class ProductsService {
     params: Options,
     body: any
   ): Observable<Product> => {
-    return this.apiService.put(url, { params, responseType: 'json' }, body);
+    return this.apiService.put(url, body, params);
   };
 }

@@ -36,12 +36,13 @@ export class HomeComponent {
   }
 
   updateProducts(product: Product) {
-    const body = JSON.stringify(product);
-    this.productsService.updateProducts(
-      `http://localhost:3000/clothes/${product.id}`,
-      {},
-      body
-    );
+    this.productsService
+      .updateProducts(
+        `http://localhost:3000/clothes/${product.id}`,
+        { responseType: 'json' },
+        product
+      )
+      .subscribe();
   }
 
   products: Product[] = [];
