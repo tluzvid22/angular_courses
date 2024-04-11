@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Product } from '../../../../types/types';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Product, RatingRateEvent } from '../../../../types/types';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 
@@ -12,4 +12,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductComponent {
   @Input() product!: Product;
+  @Output() onRatingChange = new EventEmitter<RatingRateEvent>();
+
+  emitEvent(event: any) {
+    const product = this.product;
+    const originalEvent = event.originalEvent;
+    this.onRatingChange.emit({ originalEvent, product });
+  }
 }

@@ -1,8 +1,19 @@
-<div class="column align-center wrapper">
+<div class="column align-center wrapper space-between">
+  <!-- products -->
   <div class="row wrap gap-3 justify-center align-center">
     <app-product
       *ngFor="let product of products"
       [product]="product"
+      (onRatingChange)="onRatingChange($event)"
     ></app-product>
   </div>
+
+  <!-- Paginator -->
+  <p-paginator
+    [rows]="rows"
+    [totalRecords]="totalRecords"
+    [rowsPerPageOptions]="[6, 12, 20]"
+    (onPageChange)="onPageChange($event)"
+    #paginator
+  ></p-paginator>
 </div>

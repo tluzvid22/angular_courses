@@ -7,6 +7,10 @@
     <span class="price">{{ product.price }}€</span>
   </div>
 
-  <p-rating [(ngModel)]="product.rating" iconCancelClass="hidden"></p-rating>
-  <!-- two sides binding by using "[()]". it means that the property is bound to the component -->
+  <p-rating
+    [(ngModel)]="product.rating"
+    iconCancelClass="hidden"
+    (onRate)="emitEvent($event)"
+  ></p-rating>
+  <!-- two sides binding by using "[()]". it means that the property is bound to the component and the component to the property-->
 </div>

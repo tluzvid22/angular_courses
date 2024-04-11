@@ -36,7 +36,7 @@ export interface Products {
 }
 
 export interface Product {
-  id?: number;
+  id: number;
   price: string;
   name: string;
   image: string;
@@ -51,4 +51,9 @@ export interface PaginationParams {
     | ReadonlyArray<string | number | boolean>;
   page: number;
   perPage: number;
+}
+
+export interface RatingRateEvent {
+  originalEvent: Event;
+  product: Product;
 }

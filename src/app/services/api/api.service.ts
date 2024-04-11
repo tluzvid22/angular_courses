@@ -18,7 +18,13 @@ export class ApiService {
   }
 
   put<T>(url: string, body: any, options: Options): Observable<T> {
-    return this.httpClient.put<T>(url, body, options) as Observable<T>;
+    const response = this.httpClient.put<T>(
+      url,
+      body,
+      options
+    ) as Observable<T>;
+    console.log(url);
+    return response;
   }
 
   delete<T>(url: string, options: Options): Observable<T> {
